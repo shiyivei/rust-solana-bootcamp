@@ -42,13 +42,13 @@ Rust几乎适用于各个领域的开发
 
 #### 1.1.1 安装 Rust
 
-`rustup`是一个管理 Rust 版本以及相关工具的命令行工具，你可以通过它来安装 Rust 开发环境
+`rustup`是Rust工具链的安装器和版本管理器，你可以通过它来安装 Rust 开发环境
 
 [在 Linux 或 macOS 上安装 `rustup`](https://rustwiki.org/zh-CN/book/ch01-01-installation.html#在-linux-或-macos-上安装-rustup)
 
 [在 Windows 上安装 `rustup`](https://rustwiki.org/zh-CN/book/ch01-01-installation.html#在-windows-上安装-rustup)
 
-#### 1.1.2 更新和卸载
+#### 1.1.2 更新/卸载/切换版本
 
 ```bash
 rustup update # 更新
@@ -58,9 +58,21 @@ rustup update # 更新
 rustup self uninstall # 卸载
 ```
 
+```bash
+rustup default stable # 切换到最新的稳定版本
+```
+
+```
+rustup default nightly # 切换到最新的nightly版本
+```
+
+```
+rustup default 1.64.0 # 切换到特定版本
+```
+
 #### 1.1.3 rustc
 
-rustc 是 Rust 的编译器，如下是一些使用案例：
+rustc 是 Rust 的编译器，如下是一些命令使用案例：
 
 **查看 Rust 版本**
 
@@ -3485,22 +3497,3 @@ fn main() {
 
 1. 尝试编写一个声明宏和一个过程宏，体验它们的异同
 2. 结合你过去的编码经验，你是怎么理解 Rust 中的不安全问题的，安全问题有被扩大吗？
-
-# 7 Rust官方文档复习
-
-1 项目中的crate除非手动指定，否则一直沿用第一次cargo build记录的版本
-
-2 写一个例子来说明，当变量具有可变性的糟糕情况
-
-3 Rust 的默认形式通常是个不错的选择，整型默认是 `i32`。`isize` 和 `usize` 的主要应用场景是用作某些集合的索引。
-
-4 编译器可以通过使用方式和值推断出类型
-
-5 如果表达式不返回任何其他值，就隐式地返回单元值（）
-
-6 运行时检查数组长度，rust安全性的体现，其他低级语言中有时候并不检查，导致访问无效内存，rust通过立即退出来避免
-
-7 rust是一门关于表达式的语言，**语句**（*statement*）是执行一些操作但不返回值的指令。表达式（*expression*）计算并产生一个值
-
-数调用是一个表达式。宏调用是一个表达式。我们用来创建新作用域的大括号（代码块） `{}` 也是一个表达式，表达式的结尾没有分号
-

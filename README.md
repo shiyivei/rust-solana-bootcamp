@@ -1,4 +1,4 @@
-# rust-co-learn
+# rust-solana-bootcamp
 
 克隆项目至本地
 
